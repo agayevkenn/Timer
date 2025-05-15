@@ -19,6 +19,13 @@ const Timer = () => {
   }, [active, totalSeconds]);
 
   useEffect(() => {
+    if (active && totalSeconds == 0) {
+      setActive(false);
+      alert("Time is done!");
+    }
+  }, [totalSeconds, active]);
+
+  useEffect(() => {
     const hrs = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
     const mins = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
     const secs = String(totalSeconds % 60).padStart(2, '0');
