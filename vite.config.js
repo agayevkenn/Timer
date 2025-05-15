@@ -7,5 +7,5 @@ export default defineConfig({
   open: true, 
  },     
   plugins: [react()],
-  base: '/task2',  
+  base: '/Timer',  
 })
